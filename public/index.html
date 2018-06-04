@@ -20,12 +20,44 @@
       Learn how to configure a non-root public URL by running `npm run build`.
     -->
     <title>React App</title>
+    <!-- Add in some basic styles for our HTML -->
+    <style>
+      p {
+        font-size: xx-large;
+        text-align: center;
+      }
+    </style>
   </head>
   <body>
     <noscript>
       You need to enable JavaScript to run this app.
     </noscript>
-    <div id="root"></div>
+    
+    <div id="root">
+      <!--
+        Add Basic HTML for progressive enhancement
+      -->
+      <p class="loading">
+          Loading site...
+        </p>
+    </div>
+    <script>
+      // Check serviceWorker is supported by our web browser or not.
+      if ('serviceWorker' in navigator) {
+        window.addEventListener('load', function() {
+          // Register the service worker.
+          navigator.serviceWorker.register('worker.js').then(function(registration) {
+            console.log('Worker registration successful', registration.scope);
+          }, function(err) {
+            console.log('Worker registration failed', err);
+          }).catch(function(err) {
+            console.log(err);
+          });
+        });
+      } else {
+        console.log('Service Worker is not supported by browser.');
+      }
+    </script>
     <!--
       This HTML file is a template.
       If you open it directly in the browser, you will see an empty page.
