@@ -34,4 +34,5 @@ This will add this application to your home screen.
 
 If you want to add this application to your android or ios mobile phone.
 Check your network ip using `ipconfig` (for windows) `ifconfig` (for linux or mac). And open you mobile browser with `${YOUR_IP_ADDRESS}:3000`. Please confirm that your laptop and mobile must be connected on the same network. Now you can add this application to your mobile home screen by taping on add to home screen.
+
 OR you have to host this application to the server and run in the mobile browser.
